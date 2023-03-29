@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MetaBlog</title>
+	<style type="text/css">
+		body {
+			background-color: #2980b9;
+			background-image: linear-gradient(to bottom, #2980b9, #154360);
+			color: black;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #fff;
+			text-align: center;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 48px;
+			margin: 0;
+		}
+		nav {
+			text-align: center;
+			margin: 20px auto;
+			width: 80%;
+		}
+		nav input[type="text"] {
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			width: 80%;
+		}
+		nav input[type="submit"] {
+			padding: 10px;
+			background-color: #fff;
+			color: #2980b9;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		nav input[type="submit"]:hover {
+			background-color: #2980b9;
+			color: Black;
+		}
+		main {
+			margin: 0 auto;
+			width: 80%;
+			padding: 20px;
+			text-align: justify;
+		}
+		main article {
+			margin-bottom: 40px;
+			border-bottom: 2px solid #fff;
+			padding-bottom: 20px;
+		}
+		main h2 {
+			font-size: 36px;
+			margin: 0 0 10px 0;
+		}
+		main p {
+			font-size: 18px;
+			margin: 0;
+		}
+		main a {
+			color: #fff;
+			text-decoration: none;
+		}
+		main a:hover {
+			color: #2980b9;
+		}
+		footer {
+			background-color: rgb(64, 224, 208);
+			text-align: center;
+			padding: 20px;
+		}
+		footer p {
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>MetaBlog</h1>
+</header>
+	<nav>
+		<form action="search.php" method="get">
+			<input type="text" name="q" placeholder="Recherche...">
+			<input type="submit" value="Chercher">
+		</form>
+	</nav>
+	<main>
+		<div style="display:none;">
+		// permet de cacher le code source de la partie php qui s'affiche
+
+CREATE DATABASE blog;
+
+USE blog;
+
+CREATE TABLE posts (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL,
+	content TEXT NOT NULL,
+	date DATETIME NOT NULL
+);
+
+INSERT INTO posts (title, content, date) VALUES
+('Intelligence artificielle : les tâches où ChatGPT peut nous remplacer', 'Voici maintenant que débarque dans le monde du travail ChatGPT 4, et puis dans sa foulée ses concurrents Google Bard ou Claude. Des chercheurs américains de OpenAI, la maison mère de ChatGPT, associés à ceux d’Open Research et de l’Université de Pennsylvanie ont tenté de mesurer l’influence potentielle de l’intelligence artificielle sur mille professions aux États-Unis. Première conclusion, huit travailleurs sur dix dans ces secteurs étudiés pourraient être affectés par ces nouveaux outils. Mais à des degrés très divers, les scientifiques ont entrepris de lister les tâches principales de chaque métier pour voir lesquelles seraient les plus affectées par l’intelligence artificielle. Résultat : 80% des métiers verraient au moins 10% de leurs tâches affectées par ChatGPT et consorts. Les chercheurs identifient même 19% des professions sur lesquelles les robots conversationnels impacteraient pas moins de la moitié de leurs tâches.
+
+Les métiers les plus touchés sont d’abord les interprètes et les traducteurs. Suivis par les métiers de l’écriture que sont les écrivains, les paroliers et même les poêtes. Viennent ensuite les journalistes. Du reste, le média américain CNet a déjà licencié une douzaine de journalistes pour ces raisons. On trouve aussi dans la liste les sténographes et les assistants juridiques. Les spécialistes des relations publiques, les mathématiciens, les comptables, les ingénieurs de la blockchain et les concepteurs d’interface web et numériques.', '2023-03-29 08:00:00'),
+('Le Vatican va envoyer un discours du pape… dans l'Espace', 'Ce message d'espérance, le pape entend désormais le délivrer d'en haut, de l'espace. Un souhait du Vatican qui s'est associé à l'Agence spatiale italienne. Contenu dans un nano-livre de 2 millimètres, il sera embarqué sur un satellite de 30 centimètres, conçu par des étudiants de l'École Polytechnique de Turin et équipé de panneaux solaires. Il sera mis en orbite à 525 kilomètres de la Terre par une fusée Falcon 9 de SpaceX qui décollera le 10 juin depuis la base aérienne de Vandenberg, en Californie, a annoncé lundi 27 mars le Saint-Siège lors d'une conférence de presse à Rome. 
+
+Cette mission spatiale, baptisée Spei Satelles ("satellite de l'espoir"), appelle l'Humanité à se rassembler au moment où la terre vit une troisième Guerre mondiale par morceau, comme ne cesse de le répéter François. Le coût de l’opération n’a pas été précisé. 
+
+Le pape cherche aussi à redonner espoir par d’autres gestes concrets : un site internet permet d'obtenir une carte d'embarquement à son nom qui sera envoyée, elle aussi, en mission sur le satellite si l'on s'engage à faire une bonne action sur Terre.
+
+', '2023-03-28 10:00:00'),
+('Un alignement de cinq planètes est actuellement visible dans le ciel nocturne', 'Levez les yeux, après le coucher du soleil. Depuis samedi 25 mars, cinq planètes sont alignées sous la Lune. Il s'agit de Jupiter, Mercure, Vénus, Uranus et Mars. Elles sont "toutes visibles en forme d'arc de cercle", a écrit sur Twitter* l'ancien astronaute d'Apollo Buzz Aldrin, invitant les internautes à "regarder le ciel". "Les spectateurs pourront avoir le meilleur aperçu de l'alignement" mardi 28 mars au soir, précise CNN*, qui ajoute qu'une grande partie est "visible à l'œil nu, même dans les zones urbaines où la pollution lumineuse est importante", citant Cameron Hummels, astrophysicien à l'Institut californien de technologie. La ligne s'étend "sur environ 50 degrés", ajoute auprès de CBS* Bill Cooke, responsable au sein de la Nasa.
+
+Pour repérer ce spectacle céleste, il faut d'abord trouver Vénus, "l'étoile du soir" et "objet le plus brillant du ciel nocturne en dehors de la Lune", détaille CNN. En dessous se trouve Uranus, parfois "difficile à repérer sans jumelles ou télescope", puis Jupiter et Mercure, "visibles environ 20 à 30 minutes après le coucher du soleil" et enfin, en suivant cette ligne, Mars et sa "teinte orange", conclut le site de la chaîne américaine. ', '2023-03-26 16:30:00');
+
+
+		<?php
+			// connexion à la base de données
+			$pdo = new PDO('mysql:host=localhost;dbname=blog', 'posts', '');
+
+			// récupération des articles
+			$query = $pdo->query('SELECT * FROM posts ORDER BY date DESC');
+			while ($post = $query->fetch()) {
+				echo '<article>';
+				echo '<h2>'.$post['title'].'</h2>';
+				echo '<p>'.$post['content'].'</p>';
+				echo '<a href="view_post.php?id='.$post['id'].'">Lire la suite</a>';
+				echo '</article>';
+			}
+		?>
+		</div>
+	</main>
+	<footer>
+		<p>Mon blog - Tous droits réservés</p
+		<p>LEBRETON Etienne</p
+		<p>Etienne.LEBRETON@ecam-strasbourg.eu</p
